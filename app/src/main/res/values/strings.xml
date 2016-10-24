@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HSV COLOR PICKER</string>
+    <string name="action_about">About</string>
+    <!-- TODO: replace your name -->
+    <string name="author">Omar Tohme (tohm0011)</string>
+    <string name="alpha">Transparency (Alpha)</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="cyan">Cyan</string>
+    <string name="green">Green</string>
+    <string name="magenta">Magenta</string>
+    <string name="red">Red</string>
+    <string name="white">White</string>
+    <string name="yellow">Yellow</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="value">Value</string>
+</resources>

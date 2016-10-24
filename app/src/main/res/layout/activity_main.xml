@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.omar.hsvcolorpicker.MainActivity">
+
+    <TextView
+        android:id="@+id/colorSwatch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:height="200dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/hue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hueSB"
+        android:labelFor="@+id/hueSB"
+        android:text="@string/hue"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <SeekBar
+        android:id="@+id/hueSB"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/hue" />
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hueSB"
+        android:labelFor="@+id/valueSB"
+        android:text="@string/value"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <SeekBar
+        android:id="@+id/valueSB"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/value"
+        android:background="@drawable/saturation" />
+
+    <TextView
+        android:id="@+id/saturation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/valueSB"
+        android:labelFor="@+id/saturationSB"
+        android:text="@string/saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <SeekBar
+        android:id="@+id/saturationSB"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/saturation"
+        android:background="@drawable/value" />
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/colorScroller"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blackPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#000"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/redPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#FF0000"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/limePress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#00FF00"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/bluePress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#0000FF"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/yellowPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#FFFF00"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/cyanPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#00FFFF"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/magentaPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#FF00FF"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/silverPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#C0C0C0"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/grayPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#808080"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/maroonPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#800000"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/olivePress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#808000"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/greenPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#008000"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/purplePress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#800080"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/tealPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#008080"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/navyPress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#000080"
+                android:onClick="buttonPress" />
+
+            <Button
+
+                android:id="@+id/whitePress"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:onClick="buttonPress" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>
