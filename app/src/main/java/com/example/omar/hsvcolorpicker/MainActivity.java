@@ -1,3 +1,8 @@
+/**
+ *  Purpose/Description of your app
+ *  @author Omar Tohme(tohm0011@algonquinlive.com)
+ */
+
 package com.example.omar.hsvcolorpicker;
 
 import android.app.DialogFragment;
@@ -17,18 +22,7 @@ import java.util.Observer;
 
 import model.HSVModel;
 
-/**
- * The Controller for RGBAModel.
- * <p>
- * As the Controller:
- * a) event handler for the View
- * b) observer of the Model (RGBAModel)
- * <p>
- * Features the Update / React Strategy.
- *
- * @author tohm0011@AlgonquinCollege.com
- * @version 1.0
- */
+
 public class MainActivity extends AppCompatActivity implements Observer
         , SeekBar.OnSeekBarChangeListener {
     // CLASS VARIABLES
@@ -53,20 +47,18 @@ public class MainActivity extends AppCompatActivity implements Observer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Instantiate a new AboutDialogFragment()
-        // but do not show it (yet)
+
         mAboutDialog = new AboutDialogFragment();
 
-        // Instantiate a new RGBA model
-        // Initialize the model red (max), green (min), blue (min), and alpha (max)
+
         mModel = new HSVModel();
         mModel.setHue(HSVModel.MAX_HUE);
         mModel.setSaturation(HSVModel.MIN_SATURATION);
         mModel.setValue(HSVModel.MIN_VALUE);
-        // The Model is observing this Controller (class MainActivity implements Observer)
+
         mModel.addObserver(this);
 
-        // reference each View
+
         mColorSwatch = (TextView) findViewById(R.id.colorSwatch);
         mHueSB = (SeekBar) findViewById(R.id.hueSB);
         mSaturationSB = (SeekBar) findViewById(R.id.saturationSB);
@@ -74,21 +66,21 @@ public class MainActivity extends AppCompatActivity implements Observer
         mHueText = (TextView) findViewById(R.id.hue);
         mSaturationText = (TextView) findViewById(R.id.saturation);
         mValueText = (TextView) findViewById(R.id.value);
-        //TODO: reference the remaining <SeekBar>s: green, blue and alpha
 
-        // set the domain (i.e. max) for each component
+
+
         mHueSB.setMax((int) HSVModel.MAX_HUE);
         mSaturationSB.setMax((int) HSVModel.MAX_SATURATION);
         mValueSB.setMax((int) HSVModel.MAX_VALUE);
-        //TODO: setMax() for the remaining <SeekBar>s: green, blue and alpha
 
-        // register the event handler for each <SeekBar>
+
+
         mHueSB.setOnSeekBarChangeListener(this);
         mSaturationSB.setOnSeekBarChangeListener(this);
         mValueSB.setOnSeekBarChangeListener(this);
-        //TODO: register the remaining <SeekBar>s: green, blue and alpha
 
-        // initialize the View to the values of the Model
+
+
         this.updateView();
     }
 
@@ -159,21 +151,15 @@ public class MainActivity extends AppCompatActivity implements Observer
         Log.e("TAG", mModel.getHue() + " S " + mModel.getSaturation() + " v " + mModel.getValue());
     }
 
-    /**
-     * Event handler for the <SeekBar>s: red, green, blue, and alpha.
-     */
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-        // Did the user cause this event?
-        // YES > continue
-        // NO  > leave this method
+
         if (fromUser == false) {
             return;
         }
 
-        // Determine which <SeekBark> caused the event (switch + case)
-        // GET the SeekBar's progress, and SET the model to it's new value
+
         switch (seekBar.getId()) {
             case R.id.hueSB:
                 mModel.setHue(mHueSB.getProgress());
@@ -220,12 +206,11 @@ public class MainActivity extends AppCompatActivity implements Observer
     }
 
     private void updateHueSB() {
-        //GET the model's red value, and SET the red <SeekBar>
         mHueSB.setProgress((int) mModel.getHue());
         mHueText.setText("Hue: " + mModel.getHue());
     }
 
-    // synchronize each View component with the Model
+
     public void updateView() {
         this.updateColorSwatch();
         this.updateHueSB();
@@ -234,15 +219,13 @@ public class MainActivity extends AppCompatActivity implements Observer
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         if (id == R.id.action_about) {
